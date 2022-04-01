@@ -18,6 +18,6 @@ public class ColorPickerServlet extends HttpServlet {
 
         System.out.println(color);
 
-        resp.sendRedirect("/color-picker");
+        resp.sendRedirect("/color-viewer?color=" + color);
     }
 }
