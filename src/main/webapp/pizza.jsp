@@ -10,58 +10,58 @@
 <%@include file="partials/navbar.jsp" %>
 <h1>Create Your Pizza</h1>
 <div>
-    <form action="${pageContext.request.contextPath}/pizza-order" method="POST">
+    <form method="POST">
         <div>
             <select class="form-select" aria-label="Default select example" name="crust">
                 <option selected>Select your crust</option>
-                <option value="1">Regular Crust</option>
-                <option value="2">Thin Crust</option>
-                <option value="3">Stuffed Crust</option>
+                <option value="Regular">Regular Crust</option>
+                <option value="Thin">Thin Crust</option>
+                <option value="Stuffed">Stuffed Crust</option>
             </select>
         </div>
         <div>
             <select class="form-select" aria-label="Default select example" name="sauce">
                 <option selected>Select your sauce</option>
-                <option value="1">Light Sauce</option>
-                <option value="2">Regular Sauce</option>
-                <option value="3">Lots O Sauce</option>
+                <option value="Light">Light Sauce</option>
+                <option value="Regular">Regular Sauce</option>
+                <option value="Lots">Lots O Sauce</option>
             </select>
         </div>
         <div>
             <select class="form-select" aria-label="Default select example" name="size">
                 <option selected>Select your size</option>
-                <option value="1">Small</option>
-                <option value="2">Medium</option>
-                <option value="3">Large</option>
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
             </select>
         </div>
         <div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="Pepperoni" name="pepperoni">
+                <input class="form-check-input" type="checkbox" value="pepperoni" id="Pepperoni" name="toppings">
                 <label class="form-check-label" for="pepperoni">
                     Pepperoni
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="Bacon" name="bacon">
+                <input class="form-check-input" type="checkbox" value="bacon" id="Bacon" name="toppings">
                 <label class="form-check-label" for="bacon">
                     Bacon
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="Tomatoes" name="tomatoes">
+                <input class="form-check-input" type="checkbox" value="tomatoes" id="Tomatoes" name="toppings">
                 <label class="form-check-label" for="tomatoes">
                     Tomatoes
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="Black Olives" name="Black Olives">
+                <input class="form-check-input" type="checkbox" value="black olives" id="Black Olives" name="toppings">
                 <label class="form-check-label" for="Black Olives">
                     Black Olives
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="Onions" name="onions">
+                <input class="form-check-input" type="checkbox" value="onions" id="Onions" name="toppings">
                 <label class="form-check-label" for="onions">
                     Onions
                 </label>
