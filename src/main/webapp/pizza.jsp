@@ -35,17 +35,39 @@
 </div>
 <div>
     <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-        <label class="form-check-label" for="defaultCheck1">
-            Default checkbox
+        <input class="form-check-input" type="checkbox" value="" id="Pepperoni">
+        <label class="form-check-label" for="Pepperoni">
+            Pepperoni
         </label>
     </div>
     <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
-        <label class="form-check-label" for="defaultCheck2">
-            Disabled checkbox
+        <input class="form-check-input" type="checkbox" value="" id="Bacon">
+        <label class="form-check-label" for="Bacon">
+            Bacon
         </label>
     </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="Tomatoes">
+        <label class="form-check-label" for="Tomatoes">
+            Tomatoes
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="Black Olives">
+        <label class="form-check-label" for="Black Olives">
+            Black Olives
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="Onions">
+        <label class="form-check-label" for="Onions">
+            Onions
+        </label>
+    </div>
+</div>
+<div class="input-group">
+    <span class="input-group-text">Delivery Address</span>
+    <textarea class="form-control" aria-label="With textarea"></textarea>
 </div>
 </body>
 </html>
