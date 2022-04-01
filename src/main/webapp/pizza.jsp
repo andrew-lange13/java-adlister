@@ -69,5 +69,8 @@
     <span class="input-group-text">Delivery Address</span>
     <textarea class="form-control" aria-label="With textarea"></textarea>
 </div>
+<div>
+    <input class="btn btn-primary" type="submit" value="Submit">
+</div>
 </body>
 </html>
