@@ -12,29 +12,30 @@ import java.util.Arrays;
 public class PizzaServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/pizza.jsp");
-        dispatcher.forward(request, response);
+        request.getRequestDispatcher("pizza.jsp").forward(request, response);
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String crust = req.getParameter("crust");
-        String sauce = req.getParameter("sauce");
-        String size = req.getParameter("size");
-        String[] toppings = req.getParameterValues("toppings");
-        String address = req.getParameter("address");
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String crust = request.getParameter("crust");
+        String sauce = request.getParameter("sauce");
+        String size = request.getParameter("size");
+        String[] toppings = request.getParameterValues("toppings");
+        String address = request.getParameter("address");
 
         System.out.println(crust);
         System.out.println(sauce);
         System.out.println(size);
         System.out.println(Arrays.toString(toppings));
 
-        req.setAttribute("crust", crust);
-        req.setAttribute("sauce", sauce);
-        req.setAttribute("size", size);
-        req.setAttribute("toppings", Arrays.toString(toppings));
-        req.setAttribute("address", address);
-        req.getRequestDispatcher("/pizza.jsp").forward(req, resp);
+        response.sendRedirect("/pizza-order");
+
+//        request.setAttribute("crust", crust);
+//        request.setAttribute("sauce", sauce);
+//        request.setAttribute("size", size);
+//        request.setAttribute("toppings", Arrays.toString(toppings));
+//        request.setAttribute("address", address);
+//        request.getRequestDispatcher("/pizza.jsp").forward(request, response);
 
 
     }
