@@ -14,6 +14,6 @@ public class GuessServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        String userGuess = req.getParameter("guess");
     }
 }
