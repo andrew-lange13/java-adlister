@@ -1,3 +1,7 @@
+import dao.DaoFactory;
+import dao.Product;
+import dao.Products;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

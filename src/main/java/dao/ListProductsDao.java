@@ -1,7 +1,9 @@
+package dao;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListProductsDao implements Products{
+public class ListProductsDao implements Products {
     private List<Product> products = new ArrayList<>();
 
     public ListProductsDao(){

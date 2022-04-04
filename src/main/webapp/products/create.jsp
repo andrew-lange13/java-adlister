@@ -1,10 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Create A Product</title>
+    <title>Create A dao.Product</title>
 </head>
 <body>
-<h1>Create A Product</h1>
+<h1>Create A dao.Product</h1>
 <form action="/products/create" method="post">
     <label for="name">Name</label>
     <input name="name" id="name" type="text">

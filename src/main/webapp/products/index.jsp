@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>View Products</title>
+    <title>View dao.Products</title>
 </head>
 <body>
 <h1>Here are all the products:</h1>

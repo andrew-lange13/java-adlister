@@ -1,3 +1,5 @@
+package dao;
+
 public class DaoFactory {
     private static Products productsDao; //field for the DAO we created
 
