@@ -3,8 +3,7 @@ import java.io.Serializable;
 public class Quote implements Serializable {
 
     private int id;
-    private String firstName;
-    private String lastName;
+    private String author;
     private String content;
 
     public Quote() {
@@ -18,20 +17,12 @@ public class Quote implements Serializable {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getAuthor() {
+        return author;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     public String getContent() {
