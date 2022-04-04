@@ -5,7 +5,7 @@ public class Album implements Serializable {
     private long id;
     private String artist;
     private String name;
-    private Date releaseDate;
+    private long releaseDate;
     private long sales;
     private String genre;
 
@@ -36,11 +36,11 @@ public class Album implements Serializable {
         this.name = name;
     }
 
-    public Date getReleaseDate() {
+    public long getReleaseDate() {
         return releaseDate;
     }
 
-    public void setReleaseDate(Date releaseDate) {
+    public void setReleaseDate(long releaseDate) {
         this.releaseDate = releaseDate;
     }
 
