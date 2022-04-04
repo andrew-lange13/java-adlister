@@ -15,6 +15,11 @@ public class GuessServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String guess = req.getParameter("guess");
+        double guessDouble = Integer.parseInt(guess);
         req.setAttribute("guess", guess);
+        double correctGuess = Math.floor(Math.random()* 3)+1;
+        if (guessDouble == correctGuess){
+            req.getRequestDispatcher("guessViewer.jsp").forward(req, resp);
+        }
     }
 }
