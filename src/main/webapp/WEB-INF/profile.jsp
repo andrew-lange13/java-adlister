@@ -2,9 +2,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <jsp:include page="../partials/head.jsp"/>
     <title>Profile</title>
 </head>
 <body>
-<h1>I like turtles!!</h1>
+<jsp:include page="../partials/navbar.jsp"/>
+<h1>Hello, ${sessionScope.user}</h1>
+<h3>I like turtles!!</h3>
 </body>
 </html>
