@@ -3,13 +3,13 @@
 
 <html>
 <head>
-    <jsp:include page="partials/head.jsp">
+    <jsp:include page="../partials/head.jsp">
         <jsp:param name="title" value="Please Log In" />
     </jsp:include>
     <title>Login</title>
 </head>
 <body>
-<%@include file="partials/navbar.jsp"%>
+<%@include file="../partials/navbar.jsp"%>
 <h1>LOGIN</h1>
 <form method="post" action="">
     <div>
