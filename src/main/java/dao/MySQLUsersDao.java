@@ -10,7 +10,7 @@ public class MySQLUsersDao implements Users {
 
     private Connection connection;
 
-    public MySQLUsersDao(Config config, Connection connection) {
+    public MySQLUsersDao(Config config) {
         try {
             DriverManager.registerDriver(new Driver());
             this.connection = DriverManager.getConnection(
