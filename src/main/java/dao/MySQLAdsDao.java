@@ -46,17 +46,14 @@ public class MySQLAdsDao implements Ads{
 
     @Override
     public Long insert(Ad ad) {
-        String insertString = String.format(
-                "INSERT INTO ads (id, user_id, title, description) values (%d, %d, '%s', '%s')",
-                ad.getId(),
-                1,
-                ad.getTitle(),
-                ad.getDescription()
-        );
+        String insertString = "INSERT INTO ads (user_id, title, description) values (?, ?, ?)";
 
         try {
-            Statement stmt = connection.createStatement();
-            stmt.executeUpdate(insertString, Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement stmt = connection.prepareStatement(insertString, Statement.RETURN_GENERATED_KEYS);
+            stmt.setLong(1, ad.getUserId());
+            stmt.setString(2, ad.getTitle());
+            stmt.setString(3, ad.getDescription());
+            stmt.executeUpdate();
 
             ResultSet rs = stmt.getGeneratedKeys();
 
