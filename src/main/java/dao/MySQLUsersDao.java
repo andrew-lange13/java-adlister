@@ -4,16 +4,17 @@ import com.mysql.jdbc.Driver;
 import controllers.Config;
 import models.User;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class MySQLUsersDao implements Users {
 
-    public MySQLUsersDao(Config config) {
+    private final Connection connection;
+
+    public MySQLUsersDao(Config config, Connection connection) {
+        this.connection = connection;
         try {
             DriverManager.registerDriver(new Driver());
-            Connection connection = DriverManager.getConnection(
+            connection = DriverManager.getConnection(
                     config.getUrl(),
                     config.getUser(),
                     config.getPassword()
@@ -26,7 +27,26 @@ public class MySQLUsersDao implements Users {
 
     @Override
     public User findByUsername(String username) {
-        return null;
+        User user = null;
+        String userSearch = "SELECT * FROM users WHERE username = ?";
+        try{
+            PreparedStatement stmt = connection.prepareStatement(userSearch, Statement.RETURN_GENERATED_KEYS);
+
+            stmt.setString(1, username);
+
+            ResultSet rs = stmt.executeQuery();
+
+            rs.next();
+            user = new User(
+                    rs.getLong("id"),
+                    rs.getString("username"),
+                    rs.getString("email"),
+                    rs.getString("password"));
+
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+        return user;
     }
 
     @Override
