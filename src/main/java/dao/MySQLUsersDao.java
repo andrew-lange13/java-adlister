@@ -8,13 +8,12 @@ import java.sql.*;
 
 public class MySQLUsersDao implements Users {
 
-    private final Connection connection;
+    private Connection connection;
 
     public MySQLUsersDao(Config config, Connection connection) {
-        this.connection = connection;
         try {
             DriverManager.registerDriver(new Driver());
-            connection = DriverManager.getConnection(
+            this.connection = DriverManager.getConnection(
                     config.getUrl(),
                     config.getUser(),
                     config.getPassword()
