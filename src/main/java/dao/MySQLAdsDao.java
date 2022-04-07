@@ -40,7 +40,6 @@ public class MySQLAdsDao implements Ads {
                         rs.getString("title"),
                         rs.getString("description")
                 ));
-
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -65,7 +64,6 @@ public class MySQLAdsDao implements Ads {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return null;
     }
 }
