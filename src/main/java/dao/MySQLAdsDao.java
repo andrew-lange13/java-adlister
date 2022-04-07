@@ -8,21 +8,25 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MySQLAdsDao implements Ads{
+public class MySQLAdsDao implements Ads {
 
-    private final Connection connection;
+    private Connection connection;
 
-    public MySQLAdsDao(Config config) throws SQLException {
-        DriverManager.registerDriver(new Driver());
-        connection = DriverManager.getConnection(
-                config.getUrl(),
-                config.getUser(),
-                config.getPassword()
-        );
+    public MySQLAdsDao(Config config) {
+        try {
+            DriverManager.registerDriver(new Driver());
+            this.connection = DriverManager.getConnection(
+                    config.getUrl(),
+                    config.getUser(),
+                    config.getPassword()
+            );
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
-    public List<Ad> all(){
+    public List<Ad> all() {
         String searchString = "SELECT * FROM ads";
         List<Ad> ads = new ArrayList<>();
 
@@ -30,7 +34,7 @@ public class MySQLAdsDao implements Ads{
             Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery(searchString);
 
-            while (rs.next()){
+            while (rs.next()) {
                 ads.add(new Ad(
                         rs.getInt("user_id"),
                         rs.getString("title"),
@@ -38,7 +42,7 @@ public class MySQLAdsDao implements Ads{
                 ));
 
             }
-        } catch(SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return ads;
