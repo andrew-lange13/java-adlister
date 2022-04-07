@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
 @WebServlet(name = "AdServlet", urlPatterns = "/ads")
@@ -18,7 +19,13 @@ public class AdServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        Ads adsDao = DaoFactory.getAdsDao();
+        Ads adsDao = null;
+        try {
+            adsDao = DaoFactory.getAdsDao();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        assert adsDao != null;
         List<Ad> ads = adsDao.all();
         req.setAttribute("ads", ads);
         req.getRequestDispatcher("ads/index.jsp").forward(req, resp);
