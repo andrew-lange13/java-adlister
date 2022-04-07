@@ -22,4 +22,13 @@ public class DaoFactory {
         }
         return adsDao;
     }
+
+    private static Users usersDao;
+
+    public static Users getUsersDao() throws SQLException {
+        if (usersDao == null) {
+            usersDao = new MySQLUsersDao(new Config());
+        }
+        return usersDao;
+    }
 }
