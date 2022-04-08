@@ -7,7 +7,7 @@
 </head>
 <body>
 <jsp:include page="../WEB-INF/partials/navbar.jsp"/>
-<h1>Hello, ${sessionScope.user}</h1>
+<h1>Hello, ${sessionScope.user.username}</h1>
 <h3>I like turtles!!</h3>
 </body>
 </html>
