@@ -1,5 +1,7 @@
 package util;
 
+import org.mindrot.jbcrypt.BCrypt;
+
 public class Password {
     private static final int ROUNDS = 12;
 
