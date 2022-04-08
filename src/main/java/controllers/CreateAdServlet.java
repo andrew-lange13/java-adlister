@@ -2,12 +2,14 @@ package controllers;
 
 import dao.DaoFactory;
 import models.Ad;
+import models.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -19,16 +21,22 @@ public class CreateAdServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        Ad ad = new Ad(
-                1, // for now we'll hardcode the user id
-                request.getParameter("title"),
-                request.getParameter("description")
-        );
-        try {
-            DaoFactory.getAdsDao().insert(ad);
-        } catch (SQLException e) {
-            e.printStackTrace();
+        HttpSession session = request.getSession(false);
+        if (session.getAttribute("user") != null) {
+            User user = (User) session.getAttribute("user");
+            Ad ad = new Ad(
+                    user.getId(),
+                    request.getParameter("title"),
+                    request.getParameter("description")
+            );
+            try {
+                DaoFactory.getAdsDao().insert(ad);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            response.sendRedirect("/ads");
+        } else {
+            response.sendRedirect("/login");
         }
-        response.sendRedirect("/ads");
     }
 }
