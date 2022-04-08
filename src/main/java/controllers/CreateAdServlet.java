@@ -21,7 +21,7 @@ public class CreateAdServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        HttpSession session = request.getSession(false);
+        HttpSession session = request.getSession(false); //gets current session without creating new one
         if (session.getAttribute("user") != null) {
             User user = (User) session.getAttribute("user");
             Ad ad = new Ad(
