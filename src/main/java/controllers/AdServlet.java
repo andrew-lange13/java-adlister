@@ -20,11 +20,9 @@ public class AdServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         Ads adsDao = null;
-        try {
-            adsDao = DaoFactory.getAdsDao();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+
+        adsDao = DaoFactory.getAdsDao();
+
         assert adsDao != null;
         List<Ad> ads = adsDao.all();
         req.setAttribute("ads", ads);

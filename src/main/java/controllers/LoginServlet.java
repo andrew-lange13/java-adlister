@@ -32,15 +32,10 @@ public class LoginServlet extends HttpServlet {
         // TODO: check the submitted password against what you have in your database
         boolean validAttempt = false;
 
-        try {
-            User user = DaoFactory.getUsersDao().findByUsername(username);
-            if (BCrypt.checkpw(password, user.getPassword())){
-                validAttempt = true;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
+        User user = DaoFactory.getUsersDao().findByUsername(username);
+        if (BCrypt.checkpw(password, user.getPassword())) {
+            validAttempt = true;
         }
-
 
         if (validAttempt) {
             // TODO: store the logged in user object in the session, instead of just the username

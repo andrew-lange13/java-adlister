@@ -42,11 +42,7 @@ public class RegisterServlet extends HttpServlet {
             user.setEmail(email);
             user.setPassword(password);
 
-            try {
-                DaoFactory.getUsersDao().insert(user);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            DaoFactory.getUsersDao().insert(user);
             response.sendRedirect("/profile");
         }
     }
