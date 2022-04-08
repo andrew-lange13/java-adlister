@@ -2,6 +2,7 @@ package controllers;
 
 import dao.DaoFactory;
 import models.User;
+import org.mindrot.jbcrypt.BCrypt;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -33,7 +34,7 @@ public class LoginServlet extends HttpServlet {
 
         try {
             User user = DaoFactory.getUsersDao().findByUsername(username);
-            if (user.getPassword().equals(password)){
+            if (BCrypt.checkpw(password, user.getPassword())){
                 validAttempt = true;
             }
         } catch (SQLException e) {
