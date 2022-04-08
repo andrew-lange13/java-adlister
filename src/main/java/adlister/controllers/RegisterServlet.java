@@ -1,7 +1,7 @@
-package controllers;
+package adlister.controllers;
 
-import dao.DaoFactory;
-import models.User;
+import adlister.dao.DaoFactory;
+import adlister.models.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,9 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.SQLException;
 
-@WebServlet(name = "controllers.RegisterServlet", urlPatterns = "/register")
+@WebServlet(name = "adlister.controllers.RegisterServlet", urlPatterns = "/register")
 public class RegisterServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // TODO: show the registration form

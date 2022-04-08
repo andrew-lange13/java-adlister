@@ -1,4 +1,4 @@
-package controllers;
+package adlister.controllers;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

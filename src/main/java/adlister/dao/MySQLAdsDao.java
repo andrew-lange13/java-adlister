@@ -1,8 +1,8 @@
-package dao;
+package adlister.dao;
 
 import com.mysql.cj.jdbc.Driver;
-import controllers.Config;
-import models.Ad;
+import adlister.controllers.Config;
+import adlister.models.Ad;
 
 import java.sql.*;
 import java.util.ArrayList;

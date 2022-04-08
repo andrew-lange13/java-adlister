@@ -1,8 +1,6 @@
-package dao;
+package adlister.dao;
 
-import controllers.Config;
-
-import java.sql.SQLException;
+import adlister.controllers.Config;
 
 public class DaoFactory {
     private static Ads adsDao;

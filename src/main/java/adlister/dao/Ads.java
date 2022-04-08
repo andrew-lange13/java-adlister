@@ -1,6 +1,6 @@
-package dao;
+package adlister.dao;
 
-import models.Ad;
+import adlister.models.Ad;
 
 import java.util.List;
 

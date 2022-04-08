@@ -1,4 +1,4 @@
-package controllers;
+package adlister.controllers;
 
 import com.mysql.jdbc.Driver;
 

@@ -1,4 +1,4 @@
-package dao;
+package adlister.dao;
 
 import java.io.Serializable;
 

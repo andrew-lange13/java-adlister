@@ -1,7 +1,7 @@
-package controllers;
+package adlister.controllers;
 
-import dao.DaoFactory;
-import models.User;
+import adlister.dao.DaoFactory;
+import adlister.models.User;
 import org.mindrot.jbcrypt.BCrypt;
 
 import javax.servlet.ServletException;
@@ -10,9 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.SQLException;
 
-@WebServlet(name = "controllers.LoginServlet", urlPatterns = "/login")
+@WebServlet(name = "adlister.controllers.LoginServlet", urlPatterns = "/login")
 public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         if (request.getSession().getAttribute("user") != null) {

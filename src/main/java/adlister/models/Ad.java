@@ -1,4 +1,4 @@
-package models;
+package adlister.models;
 
 public class Ad {
     private long id;

@@ -4,7 +4,7 @@
     <title>Create A dao.Product</title>
 </head>
 <body>
-<h1>Create A dao.Product</h1>
+<h1>Create A adlister.dao.Product</h1>
 <form action="/products/create" method="post">
     <label for="name">Name</label>
     <input name="name" id="name" type="text">

@@ -1,4 +1,4 @@
-package models;
+package adlister.models;
 
 import org.mindrot.jbcrypt.BCrypt;
 

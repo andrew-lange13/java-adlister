@@ -1,8 +1,8 @@
-package controllers;
+package adlister.controllers;
 
-import dao.DaoFactory;
-import models.Ad;
-import models.User;
+import adlister.dao.DaoFactory;
+import adlister.models.Ad;
+import adlister.models.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.sql.SQLException;
 
 @WebServlet(name = "CreateAdServlet", urlPatterns = "/ads/create")
 public class CreateAdServlet extends HttpServlet {
@@ -20,7 +19,7 @@ public class CreateAdServlet extends HttpServlet {
                 .forward(request, response);
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
         HttpSession session = request.getSession(false); //gets current session without creating new one
         if (session.getAttribute("user") != null) {
             User user = (User) session.getAttribute("user");

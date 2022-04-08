@@ -1,6 +1,6 @@
-package dao;
+package adlister.dao;
 
-import models.User;
+import adlister.models.User;
 
 public interface Users {
     User findByUsername(String username);
